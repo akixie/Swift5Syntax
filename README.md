@@ -1,2 +1,2 @@
 # Swift5Syntax
-swift5.0+ syntax
+swift5.0+ syntax sample
