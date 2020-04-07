@@ -15,6 +15,7 @@
 		6293F736243C298900B0DEE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6293F734243C298900B0DEE2 /* LaunchScreen.storyboard */; };
 		6293F741243C298900B0DEE2 /* Swift5SyntaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293F740243C298900B0DEE2 /* Swift5SyntaxTests.swift */; };
 		6293F74C243C298900B0DEE2 /* Swift5SyntaxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293F74B243C298900B0DEE2 /* Swift5SyntaxUITests.swift */; };
+		6293F75A243C2BB100B0DEE2 /* HelloSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293F759243C2BB100B0DEE2 /* HelloSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6293F747243C298900B0DEE2 /* Swift5SyntaxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift5SyntaxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6293F74B243C298900B0DEE2 /* Swift5SyntaxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift5SyntaxUITests.swift; sourceTree = "<group>"; };
 		6293F74D243C298900B0DEE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6293F759243C2BB100B0DEE2 /* HelloSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				6293F734243C298900B0DEE2 /* LaunchScreen.storyboard */,
 				6293F737243C298900B0DEE2 /* Info.plist */,
 				6293F731243C298900B0DEE2 /* Preview Content */,
+				6293F759243C2BB100B0DEE2 /* HelloSwift.swift */,
 			);
 			path = Swift5Syntax;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6293F75A243C2BB100B0DEE2 /* HelloSwift.swift in Sources */,
 				6293F72A243C298400B0DEE2 /* AppDelegate.swift in Sources */,
 				6293F72C243C298400B0DEE2 /* SceneDelegate.swift in Sources */,
 				6293F72E243C298400B0DEE2 /* ContentView.swift in Sources */,
