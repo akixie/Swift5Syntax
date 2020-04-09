@@ -149,7 +149,79 @@ class HelloSwift: NSObject {
         print(largest)
         print(largestKey)
         
-
+        //使用while来重复运行一段代码直到条件改变。循环条件也可以在结尾，保证能至少循环一次
+        var n=2
+        while n<100 {
+            n *= 2
+        }
+        print(n)
+        
+        var m = 2
+        repeat{
+            m *= 2
+        }while m < 1000
+        print(m)
+        
+        //可以在循环中使用..<来表示下标范围
+        var total = 0
+        for i in 0..<4 {
+            total += i
+        }
+        print(total)
+        
+        //函数和闭包
+        var resultStr:String = ""
+        resultStr = greet(person: "Bob", day: "Tueday")
+        print(resultStr)
+        
+        //_表示不使用参数标签
+        resultStr = greet2("Jim", day: "Monday")
+        print(resultStr)
+        
+        
+        //让一个函数返回多个值
+        let statistics = calculateStatistics(scores: [5,3,100,9])
+        print(statistics.sum)
+        print(statistics.min)
+        
+        //函数可以嵌套，被嵌套的函数可以访问外侧函数的变量
+        let returnFifteenValue = returnFifteen()
+        print(returnFifteenValue)
         
     }
+    
+    //函数和闭包
+    func greet(person:String,day:String) -> String {
+        return "Hello \(person),today is \(day)"
+    }
+    //在参数名称前，可以自定义参数标签，或使用_表示不使用参数标签
+    func greet2(_ person:String,day:String) -> String {
+        return "Hello \(person),today is \(day)"
+    }
+    
+    //使用元组来生成复合值，比如让一个函数返回多个值。该元组的元素可以用名称或数字来获取
+    func calculateStatistics(scores:[Int]) -> (min:Int,max:Int,sum:Int) {
+        var min = scores[0]
+        var max = scores[0]
+        var sum = 0
+        for score in scores {
+            if score > max {
+                max = score
+            }else if(score < min){
+                min = score
+            }
+            sum += score
+        }
+        return (min,max,sum)
+    }
+    
+    func returnFifteen() -> Int {
+        var y = 10
+        func add(){
+            y += 5
+        }
+        add()
+        return y
+    }
+    
 }
