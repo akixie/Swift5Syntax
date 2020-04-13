@@ -17,27 +17,40 @@ class HelloSwift: NSObject {
         //使用 let 来声明常量，使用 var 来声明变量。
         var myVariable = 42
         myVariable = 50
+        print(myVariable)
+        
         let myConstant = 42
+        print(myConstant)
         
         let impliciInteger = 70
         let impliciDouble = 70.0
+        print(impliciInteger)
+        print(impliciDouble)
+        
         //初始值没有提供足够的信息或没有初始值，需要在变量后面声明类型，用冒号分割
         let explicitDouble:Double = 70
         let aaaFloat: Float = 4
+        print(explicitDouble)
+        print(aaaFloat)
+        
         
         //值永远不会被隐式转换为其它类型，如果需要请显式转换
         let labelString = "The width is"
         let width = 94
         let widthLabel = labelString + String(width)
+        print(widthLabel)
         
         //有一种更简单的值转换成字符串方法：把值写到括号中，并在括号之前写一个反斜杠(\)
         let apples = 3
         let oranges = 5
         let appleSummary = "i have \(apples) apples"
         let orangeSummary = "i have \(oranges) oranges"
+        print(appleSummary)
+        print(orangeSummary)
         
         let app:Float = 4.0
         let appVersion = "app version is \(app) "
+        print(appVersion)
         
         //使用三个引号（“”“）来包含多行字符串内容
         let textStr = """
@@ -45,10 +58,12 @@ class HelloSwift: NSObject {
         i said "i have \(apples) apples."
         and then I said " i have \(apples + oranges) pieces of fruit
         """
+        print(textStr)
         
         let txt = """
         i have \(apples + oranges) fruit
         """
+        print(txt)
         
         //用[]来创建字典和数组，并使用下标或键来访问元素，最后一个元素后面允许有个逗号
         var shoppingList = ["catfish","water","tulips","blue paint"]
@@ -61,9 +76,10 @@ class HelloSwift: NSObject {
         print(shoppingList)
         
         //初始化创建空数组或字典
-        var emptyArray = [String]()
-        var emptyDictionary = [String:Float]()
-        
+        let emptyArray = [String]()
+        let emptyDictionary = [String:Float]()
+        print(emptyArray)
+        print(emptyDictionary)
         
 //        shoppingList  = []
 //        occupation = [:]
@@ -86,32 +102,37 @@ class HelloSwift: NSObject {
         
         //可以使用if和let一起来处理值缺失的情况，一个可选值是一个具体的值或是nil表示值缺失
         //在类型后面加个问号（？）来标记这个变量的值是可选的
-        var optionalString:String? = "Hello"
+        let optionalString:String? = "Hello"
         print(optionalString == nil)
         
-        var optionalName:String? = "John"
+        let optionalName:String? = "John"
         var greeting = "Hello!"
         if let name = optionalName {
             greeting = "hello,\(name)"
+            print(greeting)
         }
         
         //练习：如果把optionalName改成nil，greeting会是什么？
         //添加一个else，当optionalName是nil时，给greeting赋不同的值
         //如果变量可选值是nil，条件会判断为false,如果不是nil，会将值解包并赋值给let后面的常量。
-        var oString:String? = "Hello"
-               print(oString == nil)
-        var oName:String? = nil
+        let oString:String? = "Hello"
+        print(oString == nil)
+        
+        let oName:String? = nil
+        print(oName as Any)
         var greeting1 = "Hello!"
         if let name1 = oName {
             greeting1 = "hello,\(name1)"
         }else{
             greeting1 = "oName is nil"
         }
+        print(greeting1)
         
         //通过使用？？操作符号来提供一个默认值，如果可选值缺失的话，可以使用默认值代替
         let nickName:String? = nil
         let fullName:String = "John Apple"
         let infomalGreeting = "Hi \(nickName ?? fullName)"
+        print(infomalGreeting)
         
         //switch支持任意类型的数据及各种比较操作
         //注意let在下面例子中，它将匹配等式的值赋给常量x
@@ -188,6 +209,82 @@ class HelloSwift: NSObject {
         let returnFifteenValue = returnFifteen()
         print(returnFifteenValue)
         
+        //函数是第一等类型，可以作为另外一个函数的返回值
+        let increment = makeIncrementer()
+        print(increment(7))
+        
+        //函数也可以作为参数传入另一个函数
+        let numbers = [20,19,7,12]
+        let rst =  hasAnyMatches(list: numbers, condition: lessThanTen)
+        print(rst)
+        
+        //函数实际上是一种特殊的闭包
+        let number22 = numbers.map( {
+            (number:Int) -> Int in
+            let result = 3 * number
+            return result
+        })
+        print(number22)
+        
+        //如果一个闭包的类型已知，比如作为一个代理的回调，可以忽略参数，返回值，甚至两个都忽略。
+        //单个语句闭包会把它语句的值当做结果返回
+        let mappedNumber = numbers.map({number in 3 * number})
+        print(mappedNumber)
+        
+        
+        let sortedNumbers = numbers.sorted{ $0 > $1}
+        print(sortedNumbers)
+        
+        //对象和类
+        let shape = NamedShape(name: "Apple")
+        shape.numberOfSide = 7
+        let shapeDesc = shape.simpleDesc()
+        print(shapeDesc)
+        //子类override重写父类方法
+        let test = Square(sideLength: 4.4, name: "SQ")
+        print(test.area())
+        print(test.simpleDesc())
+        
+        //getter和setter的计算属性
+        //类的构造器
+        let triangle = EquilateralTriangle(sideLength: 3.3, name: "TR")
+        print(triangle.perimeter)
+        triangle.perimeter = 9.0
+        print(triangle.sideLength)
+        
+        //使用willSet和didSet设置一个新值之前或者之后运行代码。
+        //在下面的类确保三角形的边长总是和正方形的边长相同
+        let triangleAndSquare = TriangleAndSquare(size: 10, name: "test shape")
+        print(triangleAndSquare.square.sideLength)
+        print(triangleAndSquare.triangle.sideLength)
+        triangleAndSquare.square = Square(sideLength: 50, name: "larger square")
+        print(triangleAndSquare.triangle.sideLength)
+        
+        //处理变量的可选值时，可以在操作（方法、属性和子脚本）之前加？
+        //如果？之前的值是nil，？后面的东西会被忽略，并且整个表达式返回Nil。
+        //否则，可选值会被解包，之后的所有代码都会按解包后的值运行
+        //这两种情况下，整个表达式的值也是一个可选值。
+        let optionalSquare:Square? = Square(sideLength: 2.5, name: "optionalSquare")
+        let sideLength = optionalSquare?.sideLength
+        print(sideLength as Any)
+        
+        
+        
+        
+    }
+        
+    
+    //函数也可以作为参数传入另一个函数
+    func hasAnyMatches(list:[Int], condition: (Int) -> Bool) -> Bool {
+        for item in list {
+            if condition(item) {
+                return true
+            }
+        }
+        return false
+    }
+    func lessThanTen(number:Int) -> Bool {
+        return number < 10
     }
     
     //函数和闭包
@@ -215,6 +312,7 @@ class HelloSwift: NSObject {
         return (min,max,sum)
     }
     
+    //函数可以嵌套
     func returnFifteen() -> Int {
         var y = 10
         func add(){
@@ -222,6 +320,14 @@ class HelloSwift: NSObject {
         }
         add()
         return y
+    }
+    
+    //函数是第一等类型，可以作为另外一个函数的返回值
+    func makeIncrementer() -> ((Int) -> Int){
+        func addOne(number:Int) -> Int{
+            return 1 + number
+        }
+        return addOne
     }
     
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6231B989244010C400E171AD /* NamedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6231B988244010C400E171AD /* NamedShape.swift */; };
+		6231B98B244014D800E171AD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6231B98A244014D800E171AD /* Square.swift */; };
+		6231B98D2440181000E171AD /* EquilateralTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6231B98C2440181000E171AD /* EquilateralTriangle.swift */; };
+		6231B98F24440A3200E171AD /* TriangleAndSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6231B98E24440A3200E171AD /* TriangleAndSquare.swift */; };
 		6293F72A243C298400B0DEE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293F729243C298400B0DEE2 /* AppDelegate.swift */; };
 		6293F72C243C298400B0DEE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293F72B243C298400B0DEE2 /* SceneDelegate.swift */; };
 		6293F72E243C298400B0DEE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6293F72D243C298400B0DEE2 /* ContentView.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6231B988244010C400E171AD /* NamedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedShape.swift; sourceTree = "<group>"; };
+		6231B98A244014D800E171AD /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		6231B98C2440181000E171AD /* EquilateralTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquilateralTriangle.swift; sourceTree = "<group>"; };
+		6231B98E24440A3200E171AD /* TriangleAndSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleAndSquare.swift; sourceTree = "<group>"; };
 		6293F726243C298400B0DEE2 /* Swift5Syntax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift5Syntax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6293F729243C298400B0DEE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6293F72B243C298400B0DEE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +117,10 @@
 				6293F737243C298900B0DEE2 /* Info.plist */,
 				6293F731243C298900B0DEE2 /* Preview Content */,
 				6293F759243C2BB100B0DEE2 /* HelloSwift.swift */,
+				6231B988244010C400E171AD /* NamedShape.swift */,
+				6231B98A244014D800E171AD /* Square.swift */,
+				6231B98C2440181000E171AD /* EquilateralTriangle.swift */,
+				6231B98E24440A3200E171AD /* TriangleAndSquare.swift */,
 			);
 			path = Swift5Syntax;
 			sourceTree = "<group>";
@@ -270,9 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6231B98B244014D800E171AD /* Square.swift in Sources */,
+				6231B98D2440181000E171AD /* EquilateralTriangle.swift in Sources */,
 				6293F75A243C2BB100B0DEE2 /* HelloSwift.swift in Sources */,
 				6293F72A243C298400B0DEE2 /* AppDelegate.swift in Sources */,
+				6231B98F24440A3200E171AD /* TriangleAndSquare.swift in Sources */,
 				6293F72C243C298400B0DEE2 /* SceneDelegate.swift in Sources */,
+				6231B989244010C400E171AD /* NamedShape.swift in Sources */,
 				6293F72E243C298400B0DEE2 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
