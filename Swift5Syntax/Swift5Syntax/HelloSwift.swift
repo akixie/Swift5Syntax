@@ -266,9 +266,11 @@ class HelloSwift: NSObject {
         //这两种情况下，整个表达式的值也是一个可选值。
         let optionalSquare:Square? = Square(sideLength: 2.5, name: "optionalSquare")
         let sideLength = optionalSquare?.sideLength
-        print(sideLength as Any)
+//        print(sideLength as Any)
+        print(sideLength! + 1)
+        print(sideLength!)
         
-        
+        //打包wrap(?),强制解包Force unwrapping(!)
         
         
     }
