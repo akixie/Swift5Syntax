@@ -270,7 +270,38 @@ class HelloSwift: NSObject {
         print(sideLength! + 1)
         print(sideLength!)
         
+        
         //打包wrap(?),强制解包Force unwrapping(!)
+        //WarpAndUnwarp.swift
+        
+        
+        //枚举和结构体
+        let ace = Rank.ace
+        let aceRawValue = ace.rawValue
+        print(aceRawValue)
+        
+        let hearts = Suit.hearts
+        let heartDesc = hearts.simpleDescription()
+        let heartColor = hearts.suitColor()
+        print(heartDesc)
+        print(heartColor)
+        
+        //注意 ServerResponse 的值在与 switch 的分支匹配时，
+        //日升和日落时间是如何从该值中提取出来的。
+        let success = ServerRespose.result("6:00am", "8:00pm")
+        print(success)
+        let failure = ServerRespose.failure("service error")
+        print(failure)
+        switch success {
+        case let .result(sunrise, sunset):
+            print("Sunrise is at \(sunrise) and sunset is at \(sunset)")
+        case let .failure(message):
+            print("Failure...  \(message)")
+        }
+        
+        //结构体
+        let threeOfSpades = Card(rank: .three, suit: .hearts)
+        
         
         
     }
