@@ -301,9 +301,28 @@ class HelloSwift: NSObject {
         
         //结构体
         let threeOfSpades = Card(rank: .three, suit: .hearts)
+        print(threeOfSpades)
         
+        //protocol
+        let a = SimpleClass()
+        a.adjust()
+        let aDescription = a.simpleDescription
+        print(aDescription)
         
+        var b = SimpleStructure()
+        b.adjust()
+        let bDescription = b.simpleDescription
+        print(bDescription)
         
+        //使用 extension 来为现有的类型添加功能，比如新的方法和计算属性
+        print(7.simpleDescription)
+        
+        //可以像使用其他命名类型一样使用协议名
+        //例如，创建一个有不同类型但是都实现一个协议的对象集合。
+        //当你处理类型是协议的值时，协议外定义的方法不可用。
+        let protocolValue: ExampleProtocol = a
+        print(protocolValue.simpleDescription)
+        // print(protocolValue.anotherProperty)  // 去掉注释可以看到错误
     }
         
     
