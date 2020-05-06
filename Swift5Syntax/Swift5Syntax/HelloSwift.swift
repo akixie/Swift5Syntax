@@ -323,6 +323,15 @@ class HelloSwift: NSObject {
         let protocolValue: ExampleProtocol = a
         print(protocolValue.simpleDescription)
         // print(protocolValue.anotherProperty)  // 去掉注释可以看到错误
+        //即使 protocolValue 变量运行时的类型是 simpleClass ，编译器还是会把它的类型当做 ExampleProtocol。这表示你不能调用在协议之外的方法或者属性。
+    }
+    
+    //使用 throw 来抛出一个错误和使用 throws 来表示一个可以抛出错误的函数。
+    func send(job: Int, toPrinter printerName: String) throws -> String {
+        if printerName == "Never Has Toner" {
+            throw PrinterError.noToner
+        }
+        return "Job sent"
     }
         
     
